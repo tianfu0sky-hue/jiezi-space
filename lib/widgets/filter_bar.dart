@@ -15,7 +15,7 @@ class FilterBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 44,
+      height: 40,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -28,21 +28,23 @@ class FilterBar extends StatelessWidget {
           return GestureDetector(
             onTap: () => onFilterSelected(filter),
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                color: isSelected ? const Color(0xFF6C5CE7) : Colors.white,
-                borderRadius: BorderRadius.circular(22),
+                color: isSelected 
+                    ? const Color(0xFF00B894) 
+                    : Colors.white,
+                borderRadius: BorderRadius.circular(20),
                 border: Border.all(
                   color: isSelected 
-                      ? const Color(0xFF6C5CE7) 
+                      ? const Color(0xFF00B894) 
                       : const Color(0xFFE9ECEF),
                   width: 1,
                 ),
                 boxShadow: isSelected
                     ? [
                         BoxShadow(
-                          color: const Color(0xFF6C5CE7).withOpacity(0.3),
-                          blurRadius: 8,
+                          color: const Color(0xFF00B894).withOpacity(0.3),
+                          blurRadius: 6,
                           offset: const Offset(0, 2),
                         ),
                       ]

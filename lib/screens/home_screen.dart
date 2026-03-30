@@ -45,11 +45,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F9FA),
+      backgroundColor: const Color(0xFFF2F6FA),
       body: SafeArea(
         child: Column(
           children: [
-            // 顶部栏
+            // 顶部栏（渐变背景 + 工具栏）
             const TopBar(coins: 2393),
             
             // 筛选栏
@@ -80,8 +80,8 @@ class _HomeScreenState extends State<HomeScreen> {
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          crossAxisSpacing: 16,
-          mainAxisSpacing: 16,
+          crossAxisSpacing: 12,
+          mainAxisSpacing: 12,
           childAspectRatio: 0.75,
         ),
         itemCount: filteredCards.length,

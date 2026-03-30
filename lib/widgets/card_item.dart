@@ -11,11 +11,11 @@ class CardItem extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.08),
-            blurRadius: 12,
+            color: Colors.black.withOpacity(0.06),
+            blurRadius: 10,
             offset: const Offset(0, 4),
           ),
         ],
@@ -27,7 +27,7 @@ class CardItem extends StatelessWidget {
           Expanded(
             flex: 3,
             child: ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+              borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
               child: Image.network(
                 card.imageUrl,
                 width: double.infinity,
@@ -55,7 +55,7 @@ class CardItem extends StatelessWidget {
                             : null,
                         strokeWidth: 2,
                         valueColor: const AlwaysStoppedAnimation<Color>(
-                          Color(0xFF6C5CE7),
+                          Color(0xFF00B894),
                         ),
                       ),
                     ),
@@ -77,7 +77,7 @@ class CardItem extends StatelessWidget {
                   Text(
                     card.title,
                     style: const TextStyle(
-                      fontSize: 16,
+                      fontSize: 15,
                       fontWeight: FontWeight.w600,
                       color: Color(0xFF2D3436),
                     ),
@@ -85,14 +85,16 @@ class CardItem extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                   
-                  // 描述（如果有）
+                  const SizedBox(height: 4),
+                  
+                  // 描述
                   if (card.description != null && card.description!.isNotEmpty)
                     Expanded(
                       child: Text(
                         card.description!,
                         style: const TextStyle(
                           fontSize: 12,
-                          color: Color(0xFF636E72),
+                          color: Color(0xFFA0A0A0),
                         ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -114,27 +116,31 @@ class CardItem extends StatelessWidget {
 
   Widget _buildStatusBadge() {
     Color badgeColor;
+    Color badgeBgColor;
     String statusText;
     
     switch (card.status) {
       case CardStatus.using:
         badgeColor = const Color(0xFF00B894);
+        badgeBgColor = const Color(0xFFE8F8F5);
         statusText = '使用中';
         break;
       case CardStatus.rare:
-        badgeColor = const Color(0xFFFD79A8);
+        badgeColor = const Color(0xFFFF7675);
+        badgeBgColor = const Color(0xFFFFEBEB);
         statusText = '珍惜';
         break;
       case CardStatus.legendary:
-        badgeColor = const Color(0xFFFDCB6E);
+        badgeColor = const Color(0xFFFFA502);
+        badgeBgColor = const Color(0xFFFFF3E0);
         statusText = '传说';
         break;
     }
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
-        color: badgeColor.withOpacity(0.15),
+        color: badgeBgColor,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: badgeColor,
