@@ -10,7 +10,6 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
-  google_fonts: ^6.1.0
   cached_network_image: ^3.3.1
   shimmer: ^3.0.0
   get: ^4.6.6
@@ -26,10 +25,3 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
-
-  fonts:
-    - family: NotoSansSC
-      fonts:
-        - asset: assets/fonts/NotoSansSC-Regular.ttf
-        - asset: assets/fonts/NotoSansSC-Bold.ttf
-          weight: 700
