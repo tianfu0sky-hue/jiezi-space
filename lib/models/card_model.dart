@@ -16,14 +16,14 @@ extension CardStatusExtension on CardStatus {
     }
   }
 
-  int get color {
+  Color get color {
     switch (this) {
       case CardStatus.using:
-        return 0xFF00B894;
+        return const Color(0xFF00B894);
       case CardStatus.rare:
-        return 0xFFFD79A8;
+        return const Color(0xFFFF7675);
       case CardStatus.legendary:
-        return 0xFFFDCB6E;
+        return const Color(0xFFFFA502);
     }
   }
 }
@@ -33,18 +33,20 @@ class SpaceCard {
   final String title;
   final String imageUrl;
   final CardStatus status;
+  final String category;
   final String? description;
+  final int quantity;
   final DateTime createdAt;
-  final int? order;
 
   SpaceCard({
     required this.id,
     required this.title,
     required this.imageUrl,
     required this.status,
+    required this.category,
     this.description,
+    this.quantity = 1,
     required this.createdAt,
-    this.order,
   });
 
   factory SpaceCard.fromJson(Map<String, dynamic> json) {
@@ -56,11 +58,12 @@ class SpaceCard {
         (e) => e.name == json['status'],
         orElse: () => CardStatus.using,
       ),
+      category: json['category'] ?? '全部',
       description: json['description'],
+      quantity: json['quantity'] ?? 1,
       createdAt: json['createdAt'] != null 
           ? DateTime.parse(json['createdAt']) 
           : DateTime.now(),
-      order: json['order'],
     );
   }
 
@@ -70,9 +73,10 @@ class SpaceCard {
       'title': title,
       'imageUrl': imageUrl,
       'status': status.name,
+      'category': category,
       'description': description,
+      'quantity': quantity,
       'createdAt': createdAt.toIso8601String(),
-      'order': order,
     };
   }
 }
@@ -83,57 +87,59 @@ class MockData {
     return [
       SpaceCard(
         id: '1',
-        title: '工作台',
-        imageUrl: 'https://picsum.photos/seed/desk/300/200',
+        title: '静心',
+        imageUrl: 'https://picsum.photos/seed/book1/300/300',
         status: CardStatus.using,
-        description: '日常办公区域',
+        category: '书籍',
+        description: '心理学相关书籍',
+        quantity: 10,
         createdAt: DateTime.now(),
-        order: 1,
       ),
       SpaceCard(
         id: '2',
-        title: '阅读角',
-        imageUrl: 'https://picsum.photos/seed/book/300/200',
-        status: CardStatus.rare,
-        description: '安静的阅读空间',
+        title: '学生证',
+        imageUrl: 'https://picsum.photos/seed/card1/300/300',
+        status: CardStatus.using,
+        category: '证件',
+        quantity: 1,
         createdAt: DateTime.now(),
-        order: 2,
       ),
       SpaceCard(
         id: '3',
-        title: '游戏室',
-        imageUrl: 'https://picsum.photos/seed/game/300/200',
-        status: CardStatus.legendary,
-        description: '娱乐游戏专属空间',
+        title: '头像',
+        imageUrl: 'https://picsum.photos/seed/avatar1/300/300',
+        status: CardStatus.rare,
+        category: '头像',
+        quantity: 10,
         createdAt: DateTime.now(),
-        order: 3,
       ),
       SpaceCard(
         id: '4',
-        title: '会议室',
-        imageUrl: 'https://picsum.photos/seed/meeting/300/200',
-        status: CardStatus.using,
-        description: '团队讨论区域',
+        title: '头像',
+        imageUrl: 'https://picsum.photos/seed/avatar2/300/300',
+        status: CardStatus.rare,
+        category: '卡片',
+        quantity: 10,
         createdAt: DateTime.now(),
-        order: 4,
       ),
       SpaceCard(
         id: '5',
-        title: '休息区',
-        imageUrl: 'https://picsum.photos/seed/rest/300/200',
-        status: CardStatus.rare,
-        description: '放松休息的地方',
+        title: '小风扇',
+        imageUrl: 'https://picsum.photos/seed/fan/300/300',
+        status: CardStatus.using,
+        category: '书籍',
+        description: '便携式小风扇',
+        quantity: 10,
         createdAt: DateTime.now(),
-        order: 5,
       ),
       SpaceCard(
         id: '6',
-        title: '创意工作室',
-        imageUrl: 'https://picsum.photos/seed/art/300/200',
+        title: '证书',
+        imageUrl: 'https://picsum.photos/seed/cert/300/300',
         status: CardStatus.legendary,
-        description: '艺术创作空间',
+        category: '证件',
+        quantity: 1,
         createdAt: DateTime.now(),
-        order: 6,
       ),
     ];
   }
