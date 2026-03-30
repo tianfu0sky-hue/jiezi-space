@@ -28,19 +28,17 @@ class AppTheme {
     scaffoldBackgroundColor: backgroundColor,
     cardColor: cardBackground,
     
-    textTheme: GoogleFonts.notoSansSCTextTheme(
-      const TextTheme(
-        displayLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: textPrimary),
-        displayMedium: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: textPrimary),
-        displaySmall: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: textPrimary),
-        headlineMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: textPrimary),
-        headlineSmall: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: textPrimary),
-        titleLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: textPrimary),
-        titleMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: textPrimary),
-        bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: textPrimary),
-        bodyMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: textSecondary),
-        bodySmall: TextStyle(fontSize: 12, fontWeight: FontWeight.normal, color: textHint),
-      ),
+    textTheme: TextTheme(
+      displayLarge: GoogleFonts.notoSansSC(fontSize: 32, fontWeight: FontWeight.bold, color: textPrimary),
+      displayMedium: GoogleFonts.notoSansSC(fontSize: 28, fontWeight: FontWeight.bold, color: textPrimary),
+      displaySmall: GoogleFonts.notoSansSC(fontSize: 24, fontWeight: FontWeight.bold, color: textPrimary),
+      headlineMedium: GoogleFonts.notoSansSC(fontSize: 20, fontWeight: FontWeight.w600, color: textPrimary),
+      headlineSmall: GoogleFonts.notoSansSC(fontSize: 18, fontWeight: FontWeight.w600, color: textPrimary),
+      titleLarge: GoogleFonts.notoSansSC(fontSize: 16, fontWeight: FontWeight.w600, color: textPrimary),
+      titleMedium: GoogleFonts.notoSansSC(fontSize: 14, fontWeight: FontWeight.w500, color: textPrimary),
+      bodyLarge: GoogleFonts.notoSansSC(fontSize: 16, fontWeight: FontWeight.normal, color: textPrimary),
+      bodyMedium: GoogleFonts.notoSansSC(fontSize: 14, fontWeight: FontWeight.normal, color: textSecondary),
+      bodySmall: GoogleFonts.notoSansSC(fontSize: 12, fontWeight: FontWeight.normal, color: textHint),
     ),
     
     appBarTheme: const AppBarTheme(
@@ -91,19 +89,17 @@ class AppTheme {
     scaffoldBackgroundColor: const Color(0xFF1A1A2E),
     cardColor: const Color(0xFF16213E),
     
-    textTheme: GoogleFonts.notoSansSCTextTheme(
-      const TextTheme(
-        displayLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white),
-        displayMedium: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
-        displaySmall: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
-        headlineMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),
-        headlineSmall: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
-        titleLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.white),
-        titleMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.white),
-        bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: Colors.white),
-        bodyMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Color(0xFFA0A0A0)),
-        bodySmall: TextStyle(fontSize: 12, fontWeight: FontWeight.normal, color: Color(0xFF6E6E6E)),
-      ),
+    textTheme: TextTheme(
+      displayLarge: GoogleFonts.notoSansSC(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white),
+      displayMedium: GoogleFonts.notoSansSC(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
+      displaySmall: GoogleFonts.notoSansSC(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+      headlineMedium: GoogleFonts.notoSansSC(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),
+      headlineSmall: GoogleFonts.notoSansSC(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
+      titleLarge: GoogleFonts.notoSansSC(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.white),
+      titleMedium: GoogleFonts.notoSansSC(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.white),
+      bodyLarge: GoogleFonts.notoSansSC(fontSize: 16, fontWeight: FontWeight.normal, color: Colors.white),
+      bodyMedium: GoogleFonts.notoSansSC(fontSize: 14, fontWeight: FontWeight.normal, color: Color(0xFFA0A0A0)),
+      bodySmall: GoogleFonts.notoSansSC(fontSize: 12, fontWeight: FontWeight.normal, color: Color(0xFF6E6E6E)),
     ),
     
     cardTheme: CardTheme(
