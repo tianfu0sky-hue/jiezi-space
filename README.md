@@ -4,19 +4,20 @@
 
 ## 📱 功能特性
 
-- ✨ 卡片式 UI 设计，美观直观
-- 🏷️ 支持多种状态标签（使用中、珍惜、传说）
-- 🔍 快速筛选分类
-- 📸 支持拍照/相册添加
-- 🌙 支持亮暗主题
+- ✨ 精美的卡片式 UI 设计
+- 🏷️ 支持多种状态标签（使用中/珍惜/传说）
+- 🔍 分类筛选功能
+- 📷 支持从相册、相机或链接添加卡片
+- 💰 金币积分系统
+- 🌙 支持亮色/暗色主题
 
 ## 🚀 快速开始
 
 ### 环境要求
 
 - Flutter SDK >= 3.0.0
-- Dart >= 3.0.0
-- Android Studio / Xcode
+- Dart SDK >= 3.0.0
+- Android Studio / VS Code
 
 ### 安装依赖
 
@@ -36,12 +37,17 @@ flutter run
 flutter build apk --release
 ```
 
-## 📦 自动构建
+## 📦 下载
 
-本项目配置了 GitHub Actions，每次推送到 main 分支会自动构建 APK。
+最新的 APK 可以在 [Releases](https://github.com/tianfu0sky-hue/jiezi-space/releases) 页面下载。
 
-- 构建产物在 Actions 页面下载
-- 创建 `v*` 标签时会自动发布 Release
+## 🛠️ 技术栈
+
+- **框架**: Flutter 3.x
+- **状态管理**: GetX
+- **图片缓存**: cached_network_image
+- **字体**: Google Fonts (Noto Sans SC)
+- **UI 组件**: Material Design 3
 
 ## 📁 项目结构
 
@@ -52,7 +58,7 @@ lib/
 │   └── card_model.dart
 ├── screens/               # 页面
 │   └── home_screen.dart
-├── widgets/               # 组件
+├── widgets/               # 可复用组件
 │   ├── top_bar.dart
 │   ├── filter_bar.dart
 │   ├── card_item.dart
@@ -61,17 +67,15 @@ lib/
     └── app_theme.dart
 ```
 
-## 🎨 设计来源
+## 🤝 贡献
 
-基于 Figma 设计稿开发：
-- 卡片式布局
-- 状态标签系统
-- 顶部金币/积分系统
+欢迎提交 Issue 和 Pull Request！
 
 ## 📄 许可证
 
 MIT License
 
-## 👤 作者
+---
 
-Created for tianfu0sky-hue
+**开发**: Jarvis (AI Assistant)  
+**日期**: 2026 年 3 月
