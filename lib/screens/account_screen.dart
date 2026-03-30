@@ -47,7 +47,7 @@ class AccountScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     // 资产卡片
-                    _buildAssetCard(),
+                    _buildAssetCard(context),
                     
                     const SizedBox(height: 16),
                     
@@ -63,7 +63,7 @@ class AccountScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildAssetCard() {
+  Widget _buildAssetCard(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         gradient: const LinearGradient(
@@ -153,36 +153,21 @@ class AccountScreen extends StatelessWidget {
             context,
             icon: Icons.add_circle_outline_rounded,
             title: '充值记录',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const RechargeHistoryScreen()),
-              );
-            },
+            page: const RechargeHistoryScreen(),
           ),
           const Divider(height: 1, indent: 60),
           _buildMenuItem(
             context,
             icon: Icons.receipt_long_rounded,
             title: '消费记录',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ConsumptionHistoryScreen()),
-              );
-            },
+            page: const ConsumptionHistoryScreen(),
           ),
           const Divider(height: 1, indent: 60),
           _buildMenuItem(
             context,
             icon: Icons.qr_code_rounded,
             title: '使用兑换码',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const RedeemCodeScreen()),
-              );
-            },
+            page: const RedeemCodeScreen(),
           ),
         ],
       ),
@@ -193,7 +178,7 @@ class AccountScreen extends StatelessWidget {
     BuildContext context, {
     required IconData icon,
     required String title,
-    required VoidCallback onTap,
+    required Widget page,
   }) {
     return ListTile(
       leading: Container(
@@ -220,7 +205,12 @@ class AccountScreen extends StatelessWidget {
         Icons.chevron_right_rounded,
         color: Color(0xFFB2BEC3),
       ),
-      onTap: onTap,
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => page),
+        );
+      },
     );
   }
 }

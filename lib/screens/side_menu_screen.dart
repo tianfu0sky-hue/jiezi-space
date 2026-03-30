@@ -117,7 +117,7 @@ class SideMenuScreen extends StatelessWidget {
                         children: [
                           _buildCategoryIcon(Icons.badge_rounded, '身份证'),
                           _buildCategoryIcon(Icons.movie_rounded, '电影'),
-                          _buildCategoryIcon(Icons.passport_rounded, '护照'),
+                          _buildCategoryIcon(Icons.credit_card_rounded, '护照'),
                           _buildCategoryIcon(Icons.newspaper_rounded, '新闻'),
                           _buildCategoryIcon(Icons.video_file_rounded, '视频文件'),
                           _buildCategoryIcon(Icons.credit_card_rounded, '银行卡'),

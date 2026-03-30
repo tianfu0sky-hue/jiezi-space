@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 enum CardStatus {
   using,    // 使用中
   rare,     // 珍惜
