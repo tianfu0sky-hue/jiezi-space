@@ -42,7 +42,7 @@ android {
 
     defaultConfig {
         applicationId "com.tianfu.jiezi.jiezi_space"
-        minSdk 21
+        minSdk 26
         targetSdk 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
